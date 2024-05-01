@@ -7,7 +7,8 @@ A shortcut to using your favorite code.
 1. At [GitHub](https://github.com/kevinschaul/jump-start-template), click "Use this template" -> "Create a new repository"
 2. Check "Include all branches". The jump start website code is on the branch `gh-pages`. You probably want this code too!
 3. Give your repository a name. Might I suggest "jump-start"?
-4. On the `main` branch, add your favorite code!
+4. Go to "Settings" -> "Environments" -> "Configure github-pages" and add "main" as a deployment branch.
+5. On the `main` branch, add your favorite code!
 
 ## Adding a starter
 
