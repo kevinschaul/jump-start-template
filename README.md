@@ -1,7 +1,20 @@
 # jump-start-template
 
-A shortcut to my favorite code. Want your own? Check out
-[kevinschaul/jump-start-template](https://github.com/kevinschaul/jump-start-template).
+A shortcut to your favorite code.
+
+`jump-start` is a lightweight system to organize that code that
+you keep coming back to. It’s a structured GitHub repository
+and a web frontend.
+
+A **starter** is a directory of code that you like -- whether
+it’s a single script or an entire app. Each starter lives in a
+**group** directory. Organize similar code for easier
+navigation.
+
+When you want to use your favorite code, locate that starter
+either in this README.md or in your gallery website. Copy the
+command, and run it in your terminal. Your starter code is now
+in your project.
 
 ## Starters
 
