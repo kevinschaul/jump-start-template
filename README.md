@@ -79,12 +79,24 @@ repo](https://github.com/kevinschaul/jump-start-gallery),
 included in this repo as a git submodule. To run the gallery
 locally, using the starters in this repo as its data:
 
-    npm run gallery:clone
-    npm run gallery:install
-    npm run gallery:link
-    npm run gallery:dev
+    npm run setup
+    npm run dev
 
 Open [localhost:3000](localhost:3000) in a browser.
+
+Alternatively, there is a Storybook presentation that you can use:
+
+    npm run setup
+    npm run storybook
+
+Open localhost:6006 in a browser.
+
+## Deploying the gallery to Github Pages
+
+This repo includes a [deploy workflow](.github/workflows/deploy.yml) that
+deploys your jump start gallery to Github pages. By default the custom gallery
+frontend is used, but you can edit the env variables at the top of the workflow
+file to deploy the Storybook version instead.
 
 ## Updating the gallery code
 
