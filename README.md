@@ -94,9 +94,9 @@ Open localhost:6006 in a browser.
 ## Deploying the gallery to Github Pages
 
 This repo includes a [deploy workflow](.github/workflows/deploy.yml) that
-deploys your jump start gallery to Github pages. By default the custom gallery
-frontend is used, but you can edit the env variables at the top of the workflow
-file to deploy the Storybook version instead.
+deploys your jump start gallery to Github pages. By default the custom
+gallery frontend is used, but you can edit the env variables in
+[.env](.env) to deploy the Storybook version instead.
 
 ## Updating the gallery code
 
