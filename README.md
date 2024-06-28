@@ -22,7 +22,7 @@ in your project.
 with documentation for your specific starters.*
 
 See
-[kevinschaul/jump-start/](https://github.com/kevinschaul/jump-start/##Starters)
+[kevinschaul/jump-start/](https://github.com/kevinschaul/jump-start/#Starters)
 for an example.
 
 ## Adding a starter
