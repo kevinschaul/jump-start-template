@@ -32,7 +32,7 @@ STARTER_GROUP with a group name (e.g. `react`), and STARTER_NAME with a
 starter name (e.g. `BarChart`).
 
 ```
-npx degit kevinschaul/jump-start-template/example/starter STARTER_GROUP/STARTER_NAME
+npx tiged kevinschaul/jump-start-template/example/starter STARTER_GROUP/STARTER_NAME
 ```
 
 Then, add your code, and edit the generated `jump-start.yaml` file to your liking.
