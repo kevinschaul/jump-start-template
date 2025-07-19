@@ -38,23 +38,31 @@ jobs:
         with:
           keys-case: bypass
 
+      - name: Setup rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
+      - name: Install rust dependencies
         run: |
-          npm ci
+          cargo install jump-start --version "^0"
+
+      - name: Set up jump-start CLI
+        run: |
+          config_path="$(jump-start config)"
+          mkdir -p "$(dirname "$config_path")"
+          echo '{ "instances": [{ "name": "default", "path": ".", "default": true }] }' > "$config_path"
 
       - name: Update readme
         run: |
-          npm run update-readme
+          jump-start update-readme --instance-path .
 
       - name: Commit and push
         run: |
@@ -68,7 +76,7 @@ jobs:
       - name: Build storybook
         env:
           GITHUB_PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-        run: npm run build-storybook
+        run: jump-start storybook prod --instance-path . --output dist
 
       - name: Upload custom site artifact
         uses: actions/upload-pages-artifact@v3

@@ -3,8 +3,8 @@
 A shortcut to your favorite code.
 
 `jump-start` is a lightweight system to organize that code that
-you keep coming back to. It’s a structured GitHub repository
-and a web frontend.
+you keep coming back to. It's a structured GitHub repository,
+a CLI tool, and a web frontend.
 
 A **starter** is a directory of code that you like -- whether
 it’s a single script or an entire app. Each starter lives in a
@@ -12,9 +12,30 @@ it’s a single script or an entire app. Each starter lives in a
 navigation.
 
 When you want to use your favorite code, locate that starter
-either in this README.md or in your gallery website. Copy the
-command, and run it in your terminal. Your starter code is now
-in your project.
+either in this README.md, in your gallery website, or by searching
+with the CLI. Copy the command, and run it in your terminal.
+Your starter code is now in your project.
+
+## The `jump-start` CLI
+
+Read the full documentation at [jump-start-tools](https://github.com/kevinschaul/jump-start/).
+
+```bash
+# Install the jump-start CLI
+cargo install jump-start
+
+# Use remote starter from a GitHub repository
+jump-start use @kevinschaul/react-d3/LineChart
+
+# Set up config to use local starters
+jump-start config
+
+# Use a local starter
+jump-start use frontend/react-app
+
+# Search local starters
+jump-start find react
+```
 
 ## Starters
 
@@ -32,7 +53,7 @@ STARTER_GROUP with a group name (e.g. `react`), and STARTER_NAME with a
 starter name (e.g. `BarChart`).
 
 ```
-npx tiged kevinschaul/jump-start-template/example/starter STARTER_GROUP/STARTER_NAME
+jump-start use @kevinschaul/jump-start-template/example/starter STARTER_GROUP/STARTER_NAME
 ```
 
 Then, add your code, and edit the generated `jump-start.yaml` file to your liking.
@@ -73,31 +94,6 @@ dependencies for Sandpack to use for the preview. Think of it as the
 `package.json` file for the preview. Anything your starter needs should be
 listed here.
 
-### `degit.json`
-
-`jump-start` uses the [`tiged`](https://github.com/tiged/tiged) command to pull
-starter files out of GitHub. That command has a feature that allows for some
-actions to be run upon cloning -- most notably allowing a starter to remove
-files. Those actions are defined in a file called `degit.json`.
-
-Why `degit`, you reasonably ask? Well
-[`degit`](https://github.com/Rich-Harris/degit) was the original tool, but it
-has been abandoned. `tiged` is the updated fork. `tiged` is `degit` spelled
-backwards.
-
-It is likely you'll want all of your starters to include the following
-`degit.json` file, which automatically removes `jump-start.yaml` after your
-started is used:
-
-```
-[
-	{
-		"action": "remove",
-		"files": ["jump-start.yaml"]
-	}
-]
-```
-
 ## Customizing gallery-wide settings with `.env`
 
 `jump-start` uses `.env` for a few settings:
@@ -106,20 +102,13 @@ started is used:
   default in the deploy GitHub action.
 - `GITHUB_REPO`: GitHub repo name used in commands and links. This is set by
   default in the deploy GitHub action.
-- `DEGIT_MODE`: Sets [`tiged`'s `--mode`
-  option](https://github.com/tiged/tiged?tab=readme-ov-file#private-repositories).
-  Can be "tar" (the default) or "git".
 
 ## Running the gallery locally
 
-The jump-start gallery code lives in [a separate
-repo](https://github.com/kevinschaul/jump-start-gallery),
-included here as an npm package. To run the gallery
-locally, using the starters in this repo as its data:
+To run the gallery locally, using the starters in this repo as its data:
 
 ```
-npm install
-npm run dev
+jump-start storybook dev --instance-path .
 ```
 
 Open [localhost:6006](localhost:6006) in a browser.
